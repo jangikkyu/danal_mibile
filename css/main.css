@@ -74,7 +74,7 @@
 
 .about {
   margin-top: 100vh;
-  padding: 200px 0;
+  padding: 150px 0;
   text-align: center;
   background-image: url("../image/bg_introduce.png");
   background-position: left 50% bottom 0;
@@ -129,8 +129,11 @@
   box-sizing: border-box;
 }
 .tech .container .icon-list li img {
-  width: 100%;
-  margin-bottom: 20px;
+  width: 60%;
+  margin-bottom: 5px;
+}
+.tech .container .icon-list li span {
+  white-space: nowrap;
 }
 
 .block-chain {

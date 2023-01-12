@@ -74,7 +74,7 @@
 }
 .about {
   margin-top: 100vh;
-  padding: 200px 0;
+  padding: 150px 0;
   text-align: center;
   background-image: url("../image/bg_introduce.png");
   background-position: left 50% bottom 0;
@@ -126,8 +126,11 @@
         text-align: center;
         box-sizing: border-box;
         img {
-          width: 100%;
-          margin-bottom: 20px;
+          width: 60%;
+          margin-bottom: 5px;
+        }
+        span {
+          white-space: nowrap;
         }
       }
     }
