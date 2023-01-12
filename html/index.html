@@ -133,7 +133,7 @@
           </li>
         </ul>
       </nav>
-      <a href="" class="header__payment">결제내역 조회</a>
+      <a href="" class="link">결제내역 조회</a>
       <button class="btn btn--all">
         <span></span>
         <span></span>
@@ -474,39 +474,58 @@
     </footer>
 
     <script>
-      function plus5() {
-        console.log(x + 5);
-      }
-      function bank(money) {
-        console.log(money * 1.045);
-      }
+      const btnAll = document.querySelector(".btn--all");
       const header = document.querySelector(".header");
-      const gnb = document.querySelector(".gnb");
-      gnb.addEventListener("mouseenter", function () {
-        header.classList.add("on");
-      });
-      gnb.addEventListener("mouseleave", function () {
-        header.classList.remove("on");
-      });
+      const depth01 = document.querySelectorAll(".gnb .gnb__list > li > a");
+      const depth02 = document.querySelectorAll(
+        ".gnb .gnb__list > li .gnb__list--sub"
+      );
+      for (let i = 0; i < 6; i++) {
+        depth01[i].addEventListener("click", function (e) {
+          e.preventDefault();
+          for (let j = 0; j < 6; j++) {
+            if (i !== j) {
+              depth02[j].classList.remove("on");
+            }
+          }
 
-      const swiper = new Swiper(".platform-swiper", {
-        slidesPerView: "auto",
-        spaceBetween: 50,
-        loop: true,
-        navigation: {
-          nextEl: ".platform-swiper .btn--next",
-          prevEl: ".platform-swiper .btn--prev",
-        },
-      });
+          depth02[i].classList.toggle("on");
 
-      window.addEventListener("scroll", function () {
-        // throttle, debounce
-        // console.log(window.scrollY);
-        if (window.scrollY > 0) {
-          header.classList.add("scroll");
-        } else {
-          header.classList.remove("scroll");
-        }
+          // const isContains = depth02[i].classList.contains("on");
+          // console.log(depth02[i]);
+          // if (isContains) {
+          //   depth02[i].classList.remove("on");
+          // } else {
+          //   for (let j = 0; j < 6; j++) {
+          //     const isContainsj = depth02[j].classList.contains("on");
+          //     if (isContainsj) {
+          //       depth02[j].classList.remove("on");
+          //       break;
+          //     }
+          //   }
+          //   depth02[i].classList.add("on");
+          // }
+        });
+      }
+
+      btnAll.addEventListener("click", function () {
+        //  console.log("click_했음");
+        //  조건문
+        // const isContains = header.classList.contains("on");
+        //if (isContains) {
+        //  header.classList.remove("on");
+        //} else {
+        //  header.classList.add("on");
+        // }
+        //toggle
+
+        setTimeout(function () {
+          for (let j = 0; j < 6; j++) {
+            depth02[j].classList.remove("on");
+          }
+        }, 5000);
+
+        header.classList.toggle("on");
       });
     </script>
   </body>
