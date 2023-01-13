@@ -372,7 +372,6 @@
                 <span class="title">Robotcafe b;eat</span>
                 <span class="sticker">food tech</span>
               </li>
-
               <li class="swiper-slide">
                 <div class="img-box">
                   <img src="../image/img_family04.png" alt="" />
@@ -402,6 +401,7 @@
                 <span class="sticker">food tech</span>
               </li>
             </ul>
+            <div class="pagination"></div>
             <button class="btn btn--prev"></button>
             <button class="btn btn--next"></button>
           </div>
@@ -526,6 +526,22 @@
         }, 5000);
 
         header.classList.toggle("on");
+      });
+      new Swiper(".platform-swiper", {
+        centeredSlides: true,
+        slidesPerView: 2,
+        loop: true,
+        spaceBetween: 30,
+
+        navigation: {
+          nextEl: ".platform-swiper .btn--next",
+
+          prevEl: ".platform-swiper .btn--prev",
+        },
+        pagination: {
+          el: ".platform-swiper .pagination",
+          type: "bullets",
+        },
       });
     </script>
   </body>

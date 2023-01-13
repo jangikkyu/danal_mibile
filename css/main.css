@@ -1,5 +1,8 @@
 .container {
+  width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .section {
@@ -7,6 +10,7 @@
   background-color: #fff;
 }
 .section .container {
+  padding: 0 20px;
   min-height: 300px;
 }
 .section .container .title-box h2 {
@@ -15,7 +19,7 @@
   margin-bottom: 30px;
 }
 .section .container .title-box p {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   font-size: clamp(18px, 3.5vw, 24px);
 }
 .section .container .title-box a {
@@ -120,11 +124,11 @@
 .tech .container .icon-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px 0;
+  gap: 20px;
 }
 .tech .container .icon-list li {
-  width: 33.3333333333%;
-  padding: 0 15px;
+  width: calc((100% - 40px) / 3);
+  padding: 0;
   text-align: center;
   box-sizing: border-box;
 }
@@ -155,22 +159,22 @@
 .block-chain .container .contents .block-chain__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
 }
 .block-chain .container .contents .block-chain__list > li {
   width: 100%;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 30px;
+  border-radius: 10px;
 }
 .block-chain .container .contents .block-chain__list > li .title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #fff;
 }
 .block-chain .container .contents .block-chain__list > li .title h3 {
@@ -192,7 +196,7 @@
   display: none;
 }
 .block-chain .container .contents .block-chain__list > li ul li {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .block-chain .container .contents .block-chain__list > li ul li a {
   display: block;
@@ -236,10 +240,10 @@
 }
 .platform .container:before {
   display: block;
-  width: 300px;
+  width: 80px;
   position: absolute;
-  top: -120px;
-  bottom: -120px;
+  top: -50px;
+  bottom: -50px;
   left: 0;
   z-index: 2;
   background: rgb(255, 255, 255);
@@ -248,11 +252,11 @@
 }
 .platform .container:after {
   display: block;
-  width: 300px;
+  width: 80px;
   position: absolute;
-  top: -120px;
+  top: -50px;
   right: 0;
-  bottom: -120px;
+  bottom: -50px;
   z-index: 2;
   background: rgb(255, 255, 255);
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 47%, rgb(255, 255, 255) 100%);
@@ -267,16 +271,19 @@
 .platform .platform-swiper {
   position: relative;
 }
+.platform .platform-list {
+  position: relative;
+}
 .platform .platform-list li {
-  width: 300px;
+  width: 200px;
   position: relative;
 }
 .platform .platform-list li:hover img {
   transform: scale(1.5);
 }
 .platform .platform-list li .img-box {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  aspect-ratio: 1/1;
   overflow: hidden;
   border-radius: 50%;
 }
@@ -290,7 +297,8 @@
 .platform .platform-list li .sticker {
   position: absolute;
   top: 50px;
-  left: 60%;
+  left: 50%;
+  transform: translate(-50%);
   overflow: hidden;
   padding: 10px 30px;
   color: #fff;
@@ -307,8 +315,8 @@
   text-align: center;
 }
 .platform .btn {
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   position: absolute;
   top: 50%;
   z-index: 3;
@@ -316,26 +324,51 @@
   transform: translateY(-55%);
   background-color: #fff;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .platform .btn--prev {
-  left: 50px;
+  left: 0px;
 }
 .platform .btn--prev:after {
-  font-size: 48px;
+  font-size: 24px;
   display: inline-block;
   content: "chevron_left";
   margin-left: 0;
   font-family: "Material Icons";
 }
 .platform .btn--next {
-  right: 50px;
+  right: 0px;
 }
 .platform .btn--next:after {
-  font-size: 48px;
+  font-size: 24px;
   display: inline-block;
   content: "chevron_right";
   margin-left: 0;
   font-family: "Material Icons";
+}
+
+.platform-swiper {
+  position: relative;
+}
+.platform-swiper .pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.platform-swiper .pagination .swiper-pagination-bullet {
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #333;
+  background: none;
+  border-radius: 50px;
+  transition: all 0.25s ease;
+}
+.platform-swiper .pagination .swiper-pagination-bullet-active {
+  background-color: #333;
+  width: 30px;
 }
 
 @-webkit-keyframes arrow-move {

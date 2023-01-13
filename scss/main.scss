@@ -1,7 +1,10 @@
 @import "vars";
 @import "mixins";
 .container {
+  width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .section {
   padding: 50px 0;
@@ -10,6 +13,7 @@
     // outline: 1px solid #f00;
     // margin-left:auto;
     // margin-right: auto;
+    padding: 0 20px;
     min-height: 300px;
     .title-box {
       h2 {
@@ -19,7 +23,7 @@
         margin-bottom: 30px;
       }
       p {
-        margin-bottom: 100px;
+        margin-bottom: 50px;
         font-size: clamp(18px, 3.5vw, 24px);
       }
       a {
@@ -119,12 +123,13 @@
     .icon-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px 0;
+      gap: 20px;
       li {
-        width: (100% / 3);
-        padding: 0 15px;
+        width: calc((100% - 40px) / 3);
+        padding: 0;
         text-align: center;
         box-sizing: border-box;
+
         img {
           width: 60%;
           margin-bottom: 5px;
@@ -156,20 +161,20 @@
       .block-chain__list {
         display: flex;
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 20px;
         > li {
           width: 100%;
-          padding: 30px;
+          padding: 20px;
           box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
           box-sizing: border-box;
           background-color: rgba(255, 255, 255, 0.15);
-          border-radius: 30px;
+          border-radius: 10px;
           .title {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
             border-bottom: 1px solid #fff;
             h3 {
               font-size: 20px;
@@ -189,7 +194,7 @@
           }
           ul {
             li {
-              margin-top: 20px;
+              margin-top: 10px;
               a {
                 display: block;
                 position: relative;
@@ -237,10 +242,10 @@
     position: relative;
     &:before {
       display: block;
-      width: 300px;
+      width: 80px;
       position: absolute;
-      top: -120px;
-      bottom: -120px;
+      top: -50px;
+      bottom: -50px;
       left: 0;
       z-index: 2;
       background: rgb(255, 255, 255);
@@ -254,11 +259,11 @@
     }
     &:after {
       display: block;
-      width: 300px;
+      width: 80px;
       position: absolute;
-      top: -120px;
+      top: -50px;
       right: 0;
-      bottom: -120px;
+      bottom: -50px;
       z-index: 2;
       background: rgb(255, 255, 255);
       background: linear-gradient(
@@ -280,8 +285,9 @@
     position: relative;
   }
   .platform-list {
+    position: relative;
     li {
-      width: 300px;
+      width: 200px;
       position: relative;
       &:hover {
         img {
@@ -289,8 +295,8 @@
         }
       }
       .img-box {
-        width: 300px;
-        height: 300px;
+        width: 100%;
+        aspect-ratio: 1/1;
         overflow: hidden;
         border-radius: 50%;
         img {
@@ -303,7 +309,8 @@
       .sticker {
         position: absolute;
         top: 50px;
-        left: 60%;
+        left: 50%;
+        transform: translate(-50%);
         overflow: hidden;
         padding: 10px 30px;
         color: #fff;
@@ -322,8 +329,8 @@
     }
   }
   .btn {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     top: 50%;
     z-index: 3;
@@ -331,23 +338,46 @@
     transform: translateY(-55%);
     background-color: #fff;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &--prev {
-      left: 50px;
+      left: 0px;
       &:after {
-        font-size: 48px;
+        font-size: 24px;
         @include icon("chevron_left", 0);
       }
     }
     &--next {
-      right: 50px;
+      right: 0px;
       &:after {
-        font-size: 48px;
+        font-size: 24px;
         @include icon("chevron_right", 0);
       }
     }
   }
 }
-
+.platform-swiper {
+  position: relative;
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    .swiper-pagination-bullet {
+      opacity: 1;
+      width: 10px;
+      height: 10px;
+      border: 2px solid #333;
+      background: none;
+      border-radius: 50px;
+      transition: all 0.25s ease;
+      &-active {
+        background-color: #333;
+        width: 30px;
+      }
+    }
+  }
+}
 @keyframes arrow-move {
   0% {
     transform: translateY(0);
